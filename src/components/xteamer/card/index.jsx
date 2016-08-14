@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardTitle} from 'react-toolbox/lib/card';
 
-
 export default class XteamerCard extends React.Component {
 
   static defaultProps = {
@@ -33,6 +32,7 @@ export default class XteamerCard extends React.Component {
         onMouseLeave={this.flipXteamer}>
         <Card>
           <CardTitle
+            avatar={this.state.flipped ? xteamer.hero.avatar : xteamer.avatar}
             title={xteamer.name}
             subtitle={xteamer.specialty}
           />

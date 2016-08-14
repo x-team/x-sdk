@@ -33,7 +33,7 @@ module.exports = {
   },
   resolve: {
     alias: {},
-    extensions: ['', '.js', '.jsx', '.json']
+    extensions: ['', '.js', '.jsx', '.json', '.scss', '.css']
   },
   plugins: [ new HtmlWebpackPlugin()],
   node: {

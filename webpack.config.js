@@ -26,14 +26,14 @@ module.exports = {
         loader: "json-loader"
       },
       {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        test: /(\.scss|\.css)$/,
+        loaders: ["style", "css?modules", "sass"]
       }
     ]
   },
   resolve: {
     alias: {},
-    extensions: ['', '.js', '.jsx', '.json']
+    extensions: ['', '.js', '.jsx', '.json', '.scss', '.css']
   },
   node: {
     net: 'empty',
