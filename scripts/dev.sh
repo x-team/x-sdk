@@ -13,4 +13,5 @@ export $( cat .env|xargs)
   --progress \
   --history-api-fallback \
   --display-error-details \
-  --output-pathinfo
+  --output-pathinfo \
+  --port 8082

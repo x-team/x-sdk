@@ -21,11 +21,15 @@ module.exports = {
         loaders: process.env.PRODUCTION ? ['babel'] : ['react-hot', 'babel'],
         exclude: /node_modules/
       },
+      {
+        test: /\.json$/,
+        loader: "json-loader"
+      }
     ]
   },
   resolve: {
     alias: {},
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.json']
   },
   plugins: [ new HtmlWebpackPlugin()],
   node: {
