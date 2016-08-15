@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
-//if we are on gh-pages brach then build elements  into project's root dir
+//if we are on the gh-pages branch then build elements into project's root dir
 if (process.env.BRANCH === 'gh-pages') {
   outputPath = path.join(__dirname, '../');
 } else {
@@ -18,7 +18,7 @@ module.exports = {
     path.join(__dirname, '/bootstrap')
   ],
   output: {
-      path: path.join(__dirname, '/dist'),
+      path: outputPath,
       filename: 'index.js'
   },
   module: {
