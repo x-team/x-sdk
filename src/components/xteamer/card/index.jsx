@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardTitle} from 'react-toolbox/lib/card';
-
+import styles from './styles';
 export default class XteamerCard extends React.Component {
 
   static defaultProps = {
@@ -28,9 +28,10 @@ export default class XteamerCard extends React.Component {
 
     return (
       <div
+        className={styles.wrapper}
         onMouseEnter={this.flipHero}
         onMouseLeave={this.flipXteamer}>
-        <Card>
+        <Card style={{width: 350}}>
           <CardTitle
             avatar={this.state.flipped ? xteamer.hero.avatar : xteamer.avatar}
             title={xteamer.name}

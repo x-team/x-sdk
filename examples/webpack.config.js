@@ -1,10 +1,14 @@
 
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
-  entry: path.join(__dirname, '/bootstrap'),
+  entry: [
+    '!!style!css!./src/styles/index.css',
+    path.join(__dirname, '/bootstrap')
+  ],
   output: {
       path: path.join(__dirname, '/dist'),
       filename: 'index.js'
@@ -26,16 +30,18 @@ module.exports = {
         loader: "json-loader"
       },
       {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        test: /\.(css|scss)$/,
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1!postcss!sass')
       }
     ]
   },
   resolve: {
-    alias: {},
-    extensions: ['', '.js', '.jsx', '.json', '.scss', '.css']
+    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss']
   },
-  plugins: [ new HtmlWebpackPlugin()],
+  plugins: [
+    new ExtractTextPlugin('react-toolbox.css', { allChunks: true }),
+    new HtmlWebpackPlugin()
+  ],
   node: {
     net: 'empty',
     tls: 'empty',
