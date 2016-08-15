@@ -1,5 +1,5 @@
 ESLINT = node_modules/eslint/bin/eslint.js
-.PHONY: install start lint
+.PHONY: install start lint docs
 
 install:
 	./scripts/install.sh
@@ -11,6 +11,9 @@ build:
 dev:
 	make clean
 	./scripts/dev.sh
+
+docs:
+	./scripts/docs.sh
 
 clean:
 	rm -rf ./dist
