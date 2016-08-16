@@ -8,7 +8,7 @@ var publicPath;
 //if we are on the gh-pages branch then build elements into project's root dir
 if (process.env.BRANCH === 'gh-pages') {
   outputPath = path.join(__dirname, '../');
-  publicPath = 'x-sdk/';
+  publicPath = '/x-sdk/';
 } else {
   outputPath = path.join(__dirname, '/dist');
   publicPath = '/';
