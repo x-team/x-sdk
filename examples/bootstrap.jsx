@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory, IndexRedirect } from 'react-router'
+import { createHistory } from 'history'
+import { Router, Route, Link, useRouterHistory, IndexRedirect } from 'react-router'
 import App from './app';
 import * as Pages from './pages';
 
 const wrapper = document.createElement('div');
 document.body.appendChild(wrapper);
 
+const history = useRouterHistory(createHistory)({
+  basename: window.location.host === 'x-team.github.io' ? '/x-sdk' : '/'
+})
+
 ReactDOM.render((
-  <Router history={browserHistory}>
+  <Router history={history}>
     <Route path="/" component={App}>
       <IndexRedirect to="/welcome" />
       <Route path="welcome" component={Pages.Welcome} />
