@@ -12,7 +12,10 @@ ReactDOM.render((
     <Route path="/" component={App}>
       <IndexRedirect to="/welcome" />
       <Route path="welcome" component={Pages.Welcome} />
-      <Route path="components/card" component={Pages.Card}/>
+      <Route path="components">
+        <IndexRedirect to="card" />
+        <Route path="card" component={Pages.Card}/>
+      </Route>
     </Route>
   </Router>
 ), wrapper)
