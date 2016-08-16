@@ -31,7 +31,7 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1!postcss!sass')
+        loaders: ['style', 'css?sourceMap&modules&importLoaders=1','postcss','sass']
       }
     ]
   },
@@ -39,9 +39,6 @@ module.exports = {
     alias: {},
     extensions: ['', '.js', '.jsx', '.json', '.css', '.scss']
   },
-  plugins: [
-    new ExtractTextPlugin('react-toolbox.css', { allChunks: true })
-  ],
   node: {
     net: 'empty',
     tls: 'empty',
