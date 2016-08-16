@@ -3,12 +3,15 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-
+var outputPath;
+var publicPath'
 //if we are on the gh-pages branch then build elements into project's root dir
 if (process.env.BRANCH === 'gh-pages') {
   outputPath = path.join(__dirname, '../');
+  publicPath = 'x-sdk/';
 } else {
   outputPath = path.join(__dirname, '/dist');
+  publicPath = '/';
 }
 
 module.exports = {
@@ -20,7 +23,7 @@ module.exports = {
   output: {
       path: outputPath,
       filename: 'index.js',
-      publicPath: '/'
+      publicPath: publicPath
   },
   module: {
     loaders: [
