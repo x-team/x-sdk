@@ -19,7 +19,8 @@ module.exports = {
   ],
   output: {
       path: outputPath,
-      filename: 'index.js'
+      filename: 'index.js',
+      publicPath: '/'
   },
   module: {
     loaders: [
