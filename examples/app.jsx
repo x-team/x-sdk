@@ -4,7 +4,8 @@ import Navigation from 'react-toolbox/lib/navigation';
 import {Link} from 'react-router'
 
 import styles from './styles';
-
+import './styles/codemirror';
+import './styles/monokai';
 export default class Examples extends React.Component {
 
   render() {
