@@ -1,3 +1,8 @@
 .wrapper {
-  padding-top: 60px;
+  padding-top: 80px;
+}
+
+.appbarNav{
+  flex-grow: 1;
+  text-align: right;
 }
