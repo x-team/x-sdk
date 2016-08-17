@@ -4,24 +4,47 @@ var path = require('path');
 
 var CI = process.env.NODE_ENV !== 'development';
 var WATCH = !!process.env.WATCH_TESTS;
+
+  var babelConf = {
+    "presets": ["es2015", "react" ],
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-async-to-generator",
+      "transform-class-properties"
+    ]
+  };
+
 var conf = {
   cache: true,
   devtool: 'inline-source-map',
   resolve: {
     modulesDirectories: ['node_modules'],
-    extensions: ['', '.jsx', '.js']
+    extensions: ['', '.js', '.jsx', '.json', '.css', '.scss']
   },
   module: {
     loaders: [
-      { test: /\.(js?|jsx?)$/, exclude: /node_modules|(spec\.js)$/, loader: 'isparta?{babel: { stage: 0, plugins: ["babel-plugin-rewire"] } }' },
-      { test: /spec\.js$/, exclude: /node_modules/, loader: 'babel-loader?stage=0&plugins=babel-plugin-rewire' }
+      { test: /\.(js?|jsx?)$/,
+        exclude: /node_modules|(spec\.js)$/,
+        loader: 'isparta',
+        query: {
+          babel: babelConf
+        }
+      },
+      { test: /spec\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        plugins: ["babel-plugin-rewire"],
+        query: babelConf
+      },
+      {
+        test: /\.(css|scss)$/,
+        loaders: ['style', 'css?sourceMap&modules&importLoaders=1','postcss','sass']
+      }
     ]
   },
   plugins: [
     new RewirePlugin(),
-    new webpack.PrefetchPlugin('react'),
-    new webpack.PrefetchPlugin('radium'),
-    new webpack.PrefetchPlugin('lodash')
+    new webpack.PrefetchPlugin('react')
   ],
   node: {
    net: 'empty',
