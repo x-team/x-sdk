@@ -21,3 +21,6 @@ clean:
 
 lint:
 	./scripts/lint.sh
+
+test:
+	./scripts/test.sh
