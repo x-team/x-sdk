@@ -1,0 +1,21 @@
+.exampleWrapper {
+  display: flex;
+  .docsWrapper{
+    margin-right: 600px;
+    padding: 0 20px;
+  }
+  .playgroundWrapper{
+    top: 64px;
+    position: absolute;
+    right: 0;
+    box-shadow: -1px 1px 8px #ddd;
+    width: 600px;
+    bottom: 0;
+    .playHeader {
+      background: #2c2c2c;
+      padding: 10px 10px 0 10px;
+      color: #fff;
+      margin: 0;
+    }
+  }
+}
