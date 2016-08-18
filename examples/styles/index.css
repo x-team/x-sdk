@@ -1,8 +1,18 @@
-.wrapper {
+.xsdkDocs {
   padding-top: 64px;
 }
 
 .appbarNav{
   flex-grow: 1;
   text-align: right;
+}
+
+:global {
+  body{
+    font-weight: 200;
+    margin: 0;
+  }
+  h1,h2,h3,h4,h5{
+    font-weight: 200;
+  }
 }

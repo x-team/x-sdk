@@ -5,12 +5,13 @@ import {Link} from 'react-router'
 
 import styles from './styles';
 import './styles/codemirror';
-import './styles/monokai';
+import './styles/mbo';
+
 export default class Examples extends React.Component {
 
   render() {
     return (
-      <div className={styles.wrapper}>
+      <div className={styles.xsdkDocs}>
         <AppBar  fixed flat>
           <a href="/">X-SDK</a>
           <Navigation className={styles.appbarNav}>
@@ -18,7 +19,8 @@ export default class Examples extends React.Component {
           </Navigation>
         </AppBar>
         {this.props.children}
-      </div>
+
+        </div>
     );
   }
 }
