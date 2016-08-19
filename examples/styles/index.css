@@ -15,4 +15,25 @@
   h1,h2,h3,h4,h5{
     font-weight: 200;
   }
+  table.docs {
+    border-collapse: collapse;
+
+    th{
+      background: #f7f7f7;
+      font-weight: 400;
+      text-align: left;
+      color: #555;
+    }
+    td, th {
+      width: auto;
+      white-space: nowrap;  /** added **/
+      padding:4px 10px;
+      border: 1px solid #ccc;
+    }
+    tr th:last-child,
+    tr td:last-child{
+        width:100%;
+    }
+  }
+
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
 
-
 export default class PropTable extends React.Component {
 
   renderTableContents () {
@@ -25,13 +24,13 @@ export default class PropTable extends React.Component {
 
   render() {
     return (
-      <table ref="wrapper">
+      <table className="docs">
         <thead>
           <tr>
             <th key="0">Prop name</th>
-            <th key="1">type</th>
-            <th key="2">default</th>
-            <th key="3">description</th>
+            <th key="1">Type</th>
+            <th key="2">Default</th>
+            <th key="3">Description</th>
           </tr>
         </thead>
         <tbody>
