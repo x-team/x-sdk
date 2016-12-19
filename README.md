@@ -1,6 +1,11 @@
 # X-team sdk
 
-### Installation and usage
+React material-ui components for x-team domain entities.
+
+# DocsPage
+
+Please visit `x-team.github.io/x-sdk`
+
 ### Developing
 ```
 // to create .env file and install needed deps
